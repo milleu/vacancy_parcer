@@ -6,7 +6,7 @@ import requests
 from src.abstract_class import Job_Search
 
 
-class SuperJob(Job_Search, ABC):
+class SuperJob(Job_Search):
     """класс, в котором осуществляется работа с платформой Super Job"""
 
     def __init__(self, keyword, count):
@@ -31,6 +31,7 @@ class SuperJob(Job_Search, ABC):
 
     def get_vacancy(self):
         """получаем список вакансий"""
+        global salary_min
         vacancy_list = []
         data = self.get_request().json()
         for item in data['objects']:
@@ -41,7 +42,7 @@ class SuperJob(Job_Search, ABC):
                 if item['payment_from']:
                     salary_min = item['payment_from']
             except Exception:
-                    salary_min = None
+                salary_min = None
 
 
             job = {"job_name": job_name,
@@ -50,14 +51,16 @@ class SuperJob(Job_Search, ABC):
                     "salary_min": salary_min}
             vacancy_list.append(job)
 
-        self.write_data_to_file(vacancy_list)
-        return vacancy_list
+        sort_vac = sorted(vacancy_list, key=lambda x: x["salary_min"])
+
+        self.write_data_to_file(sort_vac)
+        return sort_vac
 
 
 
     def write_data_to_file(self, jobs):
         """записываем вакансии в файл"""
-        with open("../src/sj_vacancy.json", "w") as file:
+        with open("../src/sj_vacancy.json", "w", encoding="utf-8") as file:
             json.dump(jobs, file, sort_keys=False, indent=4, ensure_ascii=False)
 
 
