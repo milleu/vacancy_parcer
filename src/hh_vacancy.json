@@ -1,32 +1,32 @@
 [
     {
-        "job_name": "Разработчик python",
-        "emp_name": "Олихвер В. В.",
-        "description": "Rest/Fast/GraphQL Api + умение пользоваться док-ей, SQL (My / Lite), Selenium, Bs4, Qt5. Django/Flask, Умение...",
-        "salary_min": 2500
+        "job_name": "Стажер-разработчик",
+        "emp_name": "Крит",
+        "description": "Знание SQL. Владение языками программирования. Знание Java, C#, <highlighttext>Python</highlighttext>, C++. Опыт работы с PostgreSQL / Postgres Pro, Oracle, My SQL, MS...",
+        "salary_min": 40000
     },
     {
-        "job_name": "Django стажер",
-        "emp_name": "Soft Power",
-        "description": "Понимать Django, MVC. Уметь программировать на <highlighttext>Python</highlighttext>. Алгоритмический склад ума.",
-        "salary_min": 2500
+        "job_name": "Стажер в IT компанию",
+        "emp_name": "Академия 1С программирования ITS Education",
+        "description": "опыт программирования на одном из языков (JavaScript, С#, С++, <highlighttext>Python</highlighttext> и др). Главный критерий – твое желание развиваться в сфере IT. - ",
+        "salary_min": 40000
     },
     {
-        "job_name": "Junior Frontend разработчик (Стажер)",
-        "emp_name": "МКСКОМ",
-        "description": "Базовые навыки: HTML, CSS, JavaScript. Кроссбраузерная, адаптивная / гибкая / Pixel Perfect верстка. Опыт программирования: от 0 до 1 года. ",
-        "salary_min": 55000
+        "job_name": "QA manual инженер",
+        "emp_name": "АпТрейдер (UpTrader)",
+        "description": "Опыт тестирования web-приложений, смежных систем, API. Знание Selenium WebDriver, <highlighttext>Python</highlighttext>, приветствуется знание py.test, Postman. Понимание принципов построения Page Objects. ",
+        "salary_min": 50000
     },
     {
-        "job_name": "Тестировщик (Junior)",
-        "emp_name": "айФлекс, компания",
-        "description": "Неполное высшее/высшее образование. Знание теории тестирования и SQL. Теория БД: запросы (связать 2 таблицы, использовать агрегированные функции, группировка сортировка...",
-        "salary_min": 55000
+        "job_name": "Web-программист - стажер",
+        "emp_name": "Autodata",
+        "description": "Знать теорию тестирования, что такое тест планы, чек листы и протокол тестирования, свободно владеть ЯП <highlighttext>Python</highlighttext>, быть приспособленным к монотонной...",
+        "salary_min": 50000
     },
     {
-        "job_name": "Python-разработчик (Junior, Junior+)",
-        "emp_name": "Ильинский Георгий Алексеевич",
-        "description": "MySQL/postgreSQL. -знание библиотек для парсинга данных.",
+        "job_name": "Junior Python Developer",
+        "emp_name": "Itransition",
+        "description": "Basic <highlighttext>Python</highlighttext> programming skills. Understanding of web development principles. Understanding the basics of version control systems (Git, Subversion). ",
         "salary_min": 50000
     }
 ]
