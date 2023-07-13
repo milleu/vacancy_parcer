@@ -11,6 +11,20 @@ class Vacancy:
 
         Vacancy.all_vacancies.append(self)
 
+    def __gt__(self, other):
+        return int(self.salary_min) > int(other.salary_min)
+
+    def __ge__(self, other):
+        return int(self.salary_min) >= int(other.salary_min)
+
+    def __lt__(self, other):
+        return int(self.salary_min) < int(other.salary_min)
+
+    def __le__(self, other):
+        return int(self.salary_min) <= int(other.salary_min)
+
+    def __eq__(self, other):
+        return int(self.salary_min) == int(other.salary_min)
 
     def __str__(self):
         """возвращаем описание вакансии"""
@@ -21,6 +35,9 @@ class Vacancy:
         Описание вакансии: \"{self.description}\"
         Заработная плата: от {self.salary_min}"""
 
+    def sort_vac(self):
+        sort_vacancy = sorted(self.all_vacancies, key=lambda x: x[self.salary_min])
+        return sort_vacancy
 
     @classmethod
     def class_vacancy(cls, reader):

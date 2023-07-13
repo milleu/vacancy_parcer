@@ -1,13 +1,13 @@
 import json
-from abc import ABC
 
 import requests
 
 from src.abstract_class import Job_Search
 
 
-class HeadHunter(Job_Search, ABC):
+class HeadHunter(Job_Search):
     """класс, в котором осуществляется работа с платформой Head Hunter"""
+
     def __init__(self, keyword, count):
         self.count = count
         self.url = "https://api.hh.ru/vacancies"
@@ -17,10 +17,9 @@ class HeadHunter(Job_Search, ABC):
             "text": keyword,
             "archived": False}
         self.headers = {
-             "User-Agent": "50355527"
+            "User-Agent": "50355527"
         }
         self.vacancies = []
-
 
     def get_request(self):
         """делаем реквест к апи"""
@@ -31,34 +30,32 @@ class HeadHunter(Job_Search, ABC):
 
     def get_vacancy(self):
         """получаем список вакансий"""
+        global salary_min
         vacancy_list = []
         data = self.get_request().json()
         for item in data['items']:
             job_name = item['name']
             emp_name = item['employer']['name']
             description = item['snippet']['requirement'] if item['snippet'] and 'requirement' in item[
-                    'snippet'] else None
+                'snippet'] else None
             try:
                 if item['salary']:
                     salary_min = item['salary']["from"]
-            except Exception:
-                    salary_min = None
 
+            except Exception:
+                salary_min = None
 
             job = {"job_name": job_name,
-                    "emp_name": emp_name,
-                    "description": description,
-                    "salary_min": salary_min}
+                   "emp_name": emp_name,
+                   "description": description,
+                   "salary_min": salary_min}
             vacancy_list.append(job)
+        sort_vac = sorted(vacancy_list, key=lambda x: x["salary_min"])
 
-        self.write_data_to_file(vacancy_list)
-        return vacancy_list
-
-
+        self.write_data_to_file(sort_vac)
+        return sort_vac
 
     def write_data_to_file(self, jobs):
         """записываем вакансии в файл"""
-        with open("../src/hh_vacancy.json", "w") as file:
+        with open("../src/hh_vacancy.json", "w", encoding="utf-8") as file:
             json.dump(jobs, file, sort_keys=False, indent=4, ensure_ascii=False)
-
-
