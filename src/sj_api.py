@@ -44,7 +44,6 @@ class SuperJob(Job_Search):
             except Exception:
                 salary_min = None
 
-
             job = {"job_name": job_name,
                     "emp_name": emp_name,
                     "description": description,

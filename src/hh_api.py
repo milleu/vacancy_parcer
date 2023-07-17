@@ -39,9 +39,8 @@ class HeadHunter(Job_Search):
             description = item['snippet']['requirement'] if item['snippet'] and 'requirement' in item[
                 'snippet'] else None
             try:
-                if item['salary']:
+                if item ['salary']:
                     salary_min = item['salary']["from"]
-
             except Exception:
                 salary_min = None
 
@@ -50,6 +49,7 @@ class HeadHunter(Job_Search):
                    "description": description,
                    "salary_min": salary_min}
             vacancy_list.append(job)
+
         sort_vac = sorted(vacancy_list, key=lambda x: x["salary_min"])
 
         self.write_data_to_file(sort_vac)
@@ -57,5 +57,5 @@ class HeadHunter(Job_Search):
 
     def write_data_to_file(self, jobs):
         """записываем вакансии в файл"""
-        with open("../src/hh_vacancy.json", "w", encoding="utf-8") as file:
+        with open("../src/hh_vacancy.json", "w") as file:
             json.dump(jobs, file, sort_keys=False, indent=4, ensure_ascii=False)
