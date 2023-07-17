@@ -35,10 +35,6 @@ class Vacancy:
         Описание вакансии: \"{self.description}\"
         Заработная плата: от {self.salary_min}"""
 
-    def sort_vac(self):
-        sort_vacancy = sorted(self.all_vacancies, key=lambda x: x[self.salary_min])
-        return sort_vacancy
-
     @classmethod
     def class_vacancy(cls, reader):
         """создает экземпляры класса"""

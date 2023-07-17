@@ -1,11 +1,5 @@
 [
     {
-        "job_name": "Стажер-разработчик",
-        "emp_name": "Крит",
-        "description": "Знание SQL. Владение языками программирования. Знание Java, C#, <highlighttext>Python</highlighttext>, C++. Опыт работы с PostgreSQL / Postgres Pro, Oracle, My SQL, MS...",
-        "salary_min": 40000
-    },
-    {
         "job_name": "Стажер в IT компанию",
         "emp_name": "Академия 1С программирования ITS Education",
         "description": "опыт программирования на одном из языков (JavaScript, С#, С++, <highlighttext>Python</highlighttext> и др). Главный критерий – твое желание развиваться в сфере IT. - ",
@@ -28,5 +22,11 @@
         "emp_name": "Itransition",
         "description": "Basic <highlighttext>Python</highlighttext> programming skills. Understanding of web development principles. Understanding the basics of version control systems (Git, Subversion). ",
         "salary_min": 50000
+    },
+    {
+        "job_name": "Python-разработчик / Junior Python Developer",
+        "emp_name": "Comexp",
+        "description": "Требуемый опыт работы: опыт в программировании на <highlighttext>Python</highlighttext>. Ключевые навыки: <highlighttext>Python</highlighttext>, Linux, MySQL, Apache HTTP Server, SQL, Flask.",
+        "salary_min": 100000
     }
 ]
